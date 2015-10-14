@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WHS Consultations Browser</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="description" content="WHS Consultations Browser allows you to visually browse World Humanitarian Summit consultations data">
+    <meta name="keywords" content="World Humanitarian Summit,data,documents,visualization">
+    <meta name="author" content="Dominik Cygalski">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="too-small">Sorry, unfortunately your screen size is too small to correctly display this page.</div>
+    <div id="intro">
+      <h2>Welcome to WHS Consultations Browser</h2>
+      <p>Thousands of people worldwide have shared their ideas to&nbsp;reduce human loss and suffering from crisis. Leading up&nbsp;to&nbsp;the first-ever World Humanitarian Summit convened by&nbsp;the United Nations, many documents were created which contain those ideas. WHS Consultations Browser allows you to&nbsp;browse these data and navigate between these documents.</p>
+      <table>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <a href="https://www.worldhumanitariansummit.org/" target="_blank"><img src="img/whs_logo.svg" alt="WHS"/></a>
+    </div>
+    <div id="guide">
+      <p class="first">From all the documents in the collection, the most frequent two word phrases were identified. Click on&nbsp;one word and then the second word of&nbsp;the phrase will appear to&nbsp;its right - click on&nbsp;it&nbsp;as&nbsp;well. These phrases are listed on&nbsp;the left side of&nbsp;your screen. </p>
+      <p class="first">Go ahead and play with them to&nbsp;explore what the most common topics, ideas or&nbsp;issues are.</p>
+      <p class="second">On the right side of&nbsp;the page you now see all the documents appear as&nbsp;blue rectangles that contain the phrase which you have just selected. The more blue the document is, the more occurrences of&nbsp;the phrase you will find inside.</p>
+      <p class="second">Go ahead and click on&nbsp;one to&nbsp;view its content.</p>
+    </div>
+    <div id="about">
+      <p class="about">This website was created as a submission to the <a href="https://unite.un.org/ideas/content/visualizechange" target="_blank">Visualize Change</a> and its code is open source and hosted on <a href="https://github.com/Domajno/WHSConsultationsBrowser" target="_blank">GitHub</a></p>
+      <p class="about">All phrases shown on the left side of the screen were obtained from the <a href="https://unite.un.org/ideas/sites/unite.un.org.ideas/files/public/WHS%20Master%20Data%20Collection-.zip" target="_blank">WHS consultations corpus</a> by extracting top 3000 most frequent <a href="https://en.wikipedia.org/wiki/Bigram" target="_blank">bigrams</a> and filtering out those with words that are common parts of speech e.g. articles, pronouns and prepositions.</p>
+      <p class="about">To interact with the data, click on&nbsp;one word on&nbsp;the left side and then click on&nbsp;another that will appear to&nbsp;the right. You will see several blue rectangles appear on&nbsp;the right side. They represent the documents that contain the phrase you have just selected. The more blue the document the more occurrences of&nbsp;the phrase you will find in&nbsp;it. Click on&nbsp;one to&nbsp;display its content.</p>
+      <p class="about">See more <a href="http://cygalski.pl/" target="_blank">cygalski.pl</a></p>
+    </div>
+    <div style="width:28%; float:left; overflow:hidden">
+      <div id="labels"></div>
+    </div>
+    <div style="width:72%; float:right">
+      <div id="tiles">
+        <table></table>
+      </div>
+    </div>
+    <div id="results-wrapper">
+      <div id="results"></div>
+    </div>
+    <div id="buttons" class="hide">
+	  <a href="https://twitter.com/home?status=http://domajno.github.io/WHSConsultationsBrowser/" target="_blank" id="tw"><img src="img/tw.png" alt="Twitter"/></a>
+	  <img src="img/about.png" id="about-btn" alt="About"/>
+    </div>
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>
